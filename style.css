@@ -1,0 +1,591 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    color: #1c3824;
+    background-color: #fffffd;
+}
+
+img {
+    max-width: 100%;
+}
+
+b {
+    color: #503c19;
+}
+
+h1, h2 {
+    font-family: "WindSong", cursive;
+    font-weight: normal;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    color: #64836d;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    line-height: 1.5;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.8;
+}
+
+.headings {
+    display: block;
+    height: auto;
+    max-width: min(420px, 85%);
+    margin: 0 auto 35px;
+}
+
+.lineart {
+    display: block;
+    height: auto;
+    max-width: min(300px, 80%);
+    margin: 40px auto 0;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    text-align: center;
+
+    font-size: clamp(2.2rem, 8vw, 5rem);
+    font-weight: normal;
+    letter-spacing: clamp(2px, 1vw, 4px);
+    z-index: 2;
+
+    background: linear-gradient(
+        180deg,
+        #fff8d6 0%,
+        #ffe98a 12%,
+        #fff5c2 22%,
+        #d4bd62 38%,
+        #baae5d 50%,
+        #8d7f33 65%,
+        #f7e48a 82%,
+        #fff7cf 100%
+    );
+
+    background-size: 100% 200%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow:
+        0 2px 2px rgba(255,255,255,0.35),
+        0 4px 12px rgba(0,0,0,0.25),
+        0 0 18px rgba(0,0,0,0.28);
+
+    filter: drop-shadow(0 0 6px rgba(255,223,120,0.35));
+}
+
+/* WELCOME */
+
+.welcome {
+    width: 100%;
+    padding: 60px 25px 35px;
+    text-align: center;
+    background-color: #fffffd;
+}
+
+.welcome p {
+    max-width: 850px;
+    margin: 16px auto;
+    color: #1c3824;
+}
+
+.flowers {
+    display: block;
+    height: 250px;
+    width: auto;
+    margin: 35px auto 0;
+}
+
+/* LOVE STORY */
+
+.lovestory {
+    width: 100%;
+    padding: 70px 40px 40px;
+    background-color: #1c3824;
+}
+
+.lovestory h2 {
+    max-width: 950px;
+    margin: 0 auto 50px;
+    color: white;
+}
+
+.lovestory-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.lovestory-image,
+.lovestory-text {
+    flex: 1;
+}
+
+.lovestory-image img {
+    width: 420px;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.lovestory p {
+    color: #fffffd;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* MENETREND */
+
+.menetrend {
+    width: 100%;
+    padding: 70px 25px 35px;
+}
+
+   .timeline {
+    width: min(700px, 100%);
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    height: 100%;
+    width: auto;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    align-items: center;
+
+    margin: 32px 0;
+    column-gap: 25px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.item.left .text {
+    grid-column: 1;
+    justify-self: end;
+    text-align: right;
+}
+
+.item.left .icon {
+    grid-column: 2;
+    justify-self: start;
+}
+
+.item.right .icon {
+    grid-column: 2;
+    justify-self: end;
+}
+
+.item.right .text {
+    grid-column: 3;
+    justify-self: start;
+    text-align: left;
+}
+
+.text span {
+    display: block;
+    color: #c9a646;
+    font-family: "WindSong", cursive;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 1.8rem;
+}
+
+.text p {
+    margin: 0;
+    color: #5c7a6a;
+    font-size: 1.4rem;
+}
+
+.icon {
+    width: 50px;
+}
+
+/* EVENT */
+
+.event {
+    width: 100%;
+    padding: 80px 60px;
+    background-color: #64836d;
+}
+
+.event-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.event-image,
+.event-text {
+    flex: 1;
+}
+
+.eventcard {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    border: 8px solid #c9a646;
+}
+
+.event-text {
+    color: white;
+}
+
+/* DINNER */
+
+.dinner {
+    width: 100%;
+    padding: 70px 40px;
+    background-image: url("photos/wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.dinner p {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #1c3824;
+}
+
+/* DRESSCODE */
+
+.dresscode {
+    width: 100%;
+    padding: 70px 40px 35px;
+    background-color: #1c3824;
+    text-align: center;
+}
+
+.dresscode p {
+    max-width: 900px;
+    margin: 18px auto;
+    color: #fffffd;
+}
+
+/* RSVP */
+
+.rsvp {
+    width: 100%;
+    padding: 60px 40px;
+}
+
+.rsvp h2 {
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.rsvp-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.rsvp-text,
+.rsvp-image {
+    flex: 1;
+}
+
+.rsvp-text p {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.rsvp-image img {
+    width: 420px;
+    display: block;
+    margin-left: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.rsvp a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 28px;
+    background-color: #baae5d;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+
+.rsvp a:hover {
+    transform: translateY(-2px);
+    background-color: #a59646;
+}
+
+/* PHOTOS */
+
+.photos {
+    width: 100%;
+    padding: 70px 25px;
+    background-color: #1c3824;
+    text-align: center;
+    display: none;
+}
+
+.photos h2 {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    color: white;
+}
+
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    padding: 18px;
+    background-color: #64836d;
+    text-align: center;
+    color: #fffffd;
+    font-size: 0.9rem;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+    .lovestory-content,
+    .event-container,
+    .rsvp-content {
+        gap: 35px;
+    }
+
+    .event {
+        padding: 70px 40px;
+    }
+
+    .lovestory-image img,
+    .rsvp-image img {
+        width: 360px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .welcome,
+    .lovestory,
+    .menetrend,
+    .event,
+    .dinner,
+    .dresscode,
+    .rsvp,
+    .photos {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .flowers {
+        height: auto;
+        max-width: 230px;
+    }
+
+    .lovestory-content,
+    .event-container,
+    .rsvp-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .lovestory-image img,
+    .rsvp-image img,
+    .eventcard {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .event-text,
+    .rsvp-text,
+    .lovestory-text {
+        text-align: left;
+    }
+
+    .rsvp a {
+        width: 100%;
+        text-align: center;
+    }
+
+     .timeline {
+        max-width: 360px;
+        padding: 30px 0;
+    }
+
+    .line {
+        height: 100%;
+        max-width: 60px;
+    }
+
+    .item {
+        grid-template-columns: 1fr 110px 1fr;
+        column-gap: 10px;
+        margin: 30px 0;
+    }
+
+    .item.left .text {
+        grid-column: 1;
+        justify-self: end;
+        text-align: right;
+    }
+
+    .item.left .icon {
+        grid-column: 2;
+        justify-self: start;
+        margin-right: 18px;
+    }
+
+    .item.right .icon {
+        grid-column: 2;
+        justify-self: end;
+        margin-left: 18px;
+    }
+
+    .item.right .text {
+        grid-column: 3;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .icon {
+        width: 42px;
+    }
+
+    .text span {
+        font-size: 1rem;
+    }
+
+    .text p {
+        font-size: 1.05rem;
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .hero-title {
+        top: 52%;
+        font-size: 2.1rem;
+        letter-spacing: 2px;
+    }
+
+    .headings {
+        max-width: 90%;
+        margin-bottom: 25px;
+    }
+
+    .welcome,
+    .lovestory,
+    .menetrend,
+    .event,
+    .dinner,
+    .dresscode,
+    .rsvp,
+    .photos {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .lovestory,
+    .event,
+    .dinner,
+    .dresscode,
+    .rsvp,
+    .photos {
+        padding-top: 55px;
+        padding-bottom: 45px;
+    }
+
+    .timeline {
+        max-width: 320px;
+    }
+
+    .line {
+        max-width: 55px;
+    }
+
+    .item {
+        grid-template-columns: 1fr 65px 1fr;
+        column-gap: 10px;
+    }
+
+    .icon {
+        width: 36px;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    .memories {
+        width: 95%;
+    }
+}
