@@ -416,6 +416,7 @@ p {
     padding: 70px 25px;
     background-color: #1c3824;
     text-align: center;
+    display: none;
 }
 
 .photos h2 {
